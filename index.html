@@ -10,16 +10,14 @@
             --primary-pink: #d4a5b2;
             --soft-white: #f8f8f8;
             --dark-card: rgba(255, 255, 255, 0.08);
-            
-            /* --- החליפי את הקישור הזה בקישור לתמונה שלך --- */
+            /* כאן תוכלי להחליף לקישור של התמונה שלך בהמשך */
             --bg-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80');
         }
 
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0a0a;
             color: var(--soft-white);
             scroll-behavior: smooth;
         }
@@ -38,32 +36,41 @@
             padding: 20px;
         }
 
-        /* עיצוב משופר לשם עם האמוג'י */
         .name-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px; /* מרווח קטן בין השם לנשיקה */
+            gap: 8px;
             color: var(--primary-pink);
             font-size: 2.2rem;
-            margin: 0;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 300;
         }
-        .lip-emoji { font-size: 1.6rem; vertical-align: middle; } /* הקטנת האמוג'י */
+        .lip-emoji { font-size: 1.6rem; }
 
-        .hero h2 { font-size: 1.2rem; font-weight: 300; margin: 15px 0 5px; }
-        .hero p { font-size: 0.9rem; margin: 0 0 30px; opacity: 0.8; max-width: 300px; }
+        .hero h2 { font-size: 1.5rem; font-weight: 300; margin: 15px 0 5px; }
+        .hero p { font-size: 1rem; opacity: 0.8; margin-bottom: 30px; }
 
         .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
-        .btn { padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        .btn { padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid var(--primary-pink); transition: 0.3s; }
         .btn-fill { background: var(--primary-pink); color: #4a1a2c; }
-        .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: var(--soft-white); }
+        .btn-outline { color: var(--soft-white); background: transparent; }
 
-        /* כפתורים צפים */
-        .floating-icons { position: fixed; bottom: 25px; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; box-sizing: border-box; z-index: 1000; pointer-events: none; }
-        .icon-btn { width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); pointer-events: auto; }
+        /* Services */
+        .section { padding: 60px 20px; max-width: 800px; margin: auto; }
+        .service-card {
+            background: var(--dark-card);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .service-card h3 { color: var(--primary-pink); margin: 15px 0; }
+
+        /* Floating Buttons */
+        .footer-icons { position: fixed; bottom: 25px; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; box-sizing: border-box; z-index: 1000; pointer-events: none; }
+        .icon-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; text-decoration: none; pointer-events: auto; }
         .wa-color { background: #25d366; }
         .ig-color { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
     </style>
@@ -72,19 +79,46 @@
 
     <section class="hero">
         <div class="name-wrapper">
-            KIM MELAMED
-            <span class="lip-emoji">👄</span>
+            KIM MELAMED <span class="lip-emoji">👄</span>
         </div>
         <h2>המבט שלך, המומחיות שלנו</h2>
-        <p>متמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
+        <p>מתמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
         
         <div class="btn-group">
-            <a href="https://wa.me/972558854215" class="btn btn-fill" target="_blank">קבעו תור</a>
-            <a href="#" class="btn btn-outline">הכירו את השירותים</a>
+            <a href="https://wa.me/972558854215" class="btn btn-fill">קבעו תור</a>
+            <a href="#services" class="btn btn-outline">הכירו את השירותים</a>
         </div>
     </section>
 
-    <div class="floating-icons">
+    <section id="services" class="section">
+        <h2 style="text-align:center">השירותים שלנו</h2>
+        
+        <div class="service-card">
+            <i class="fa-solid fa-eye" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <h3>הלחמת ריסים</h3>
+            <p>קלאסית, ווליום, מגה ווליום, וויספי ועוד. התאמה מדויקת לצורת העין ולסגנון שלך. מראה מלא ומרשים שמחזיק עד 4 שבועות.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <h3>עיצוב וניקוי גבות</h3>
+            <p>עיצוב מדויק בשעווה ובפינצטה - מסגור מושלם לפנים בהתאמה אישית למבנה שלך.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-pen-nib" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <h3>איפור קבוע</h3>
+            <p>הדגשת שפתיים, גבות ואייליינר בטכניקות המתקדמות ביותר למראה מושלם וקבוע.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-eraser" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <h3>רימובר (הסרת איפור קבוע)</h3>
+            <p>הסרה או הבהרה של איפור קבוע ישן או לא מוצלח בצורה בטוחה ומקצועית.</p>
+        </div>
+    </section>
+
+    <div class="footer-icons">
         <a href="https://wa.me/972558854215" class="icon-btn wa-color" target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
