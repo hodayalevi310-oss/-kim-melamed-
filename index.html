@@ -3,55 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>קים מלמד - הלחמת ריסים</title>
+    <title>KIM MELAMED | קים מלמד - הלחמת ריסים</title>
     <style>
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1583001931096-959e9a1a6223?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1000&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            text-align: center;
         }
-        .card {
+
+        .container {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px 20px;
-            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px 30px;
+            border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
             width: 85%;
-            max-width: 400px;
+            max-width: 450px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
-        p { font-size: 1.1rem; margin: 15px 0 30px; opacity: 0.9; }
+
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin: 20px 0 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
         .btn {
             display: block;
-            background: #e91e63;
-            color: white;
+            background: #d4a5b2; 
+            color: #4a1a2c;
             text-decoration: none;
-            padding: 15px;
+            padding: 18px;
             border-radius: 50px;
             font-weight: bold;
-            margin-bottom: 15px;
-            transition: 0.3s;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
         }
+
         .btn-outline {
             background: transparent;
-            border: 1px solid white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>ANNETTE LASHES</h1>
-        <p>המבט שלך, המומחיות שלנו</p>
-        <a href="https://wa.me/972500000000" class="btn">קבעו תור</a>
-        <a href="#" class="btn btn-outline">הכירו את השירותים</a>
+
+    <div class="container">
+        <h1>KIM MELAMED</h1>
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.3); width: 60px; margin: 20px auto;"></div>
+        <p class="subtitle">הלחמת ריסים בעיצוב אישי</p>
+        
+        <a href="https://wa.me/972558854215" class="btn">לקביעת תור בוואטסאפ</a>
+        <a href="https://www.instagram.com/kim.beauty.1?igsh=MWU1c2J5Zmdka242aA==" class="btn btn-outline" target="_blank">האינסטגרם שלי</a>
     </div>
+
+    <a href="https://wa.me/972558854215" class="whatsapp-float" target="_blank">
+        שלחי לי הודעה
+    </a>
+
 </body>
 </html>
