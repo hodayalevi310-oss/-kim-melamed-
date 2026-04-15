@@ -3,24 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kim Melamed - Lash Artist</title>
+    <title>קים מלמד - הלחמת ריסים</title>
     <style>
-        body { font-family: sans-serif; background-color: #fce4ec; text-align: center; margin: 0; padding: 0; }
-        .container { padding: 50px 20px; }
-        h1 { color: #880e4f; }
-        p { color: #560027; font-size: 1.2rem; }
-        .btn { 
-            display: inline-block; background: #ad1457; color: white; 
-            padding: 15px 30px; text-decoration: none; border-radius: 25px; 
-            margin-top: 20px; font-weight: bold; 
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1583001931096-959e9a1a6223?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 85%;
+            max-width: 400px;
+        }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+        p { font-size: 1.1rem; margin: 15px 0 30px; opacity: 0.9; }
+        .btn {
+            display: block;
+            background: #e91e63;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>קים מלמד - הלחמת ריסים</h1>
-        <p>המבט שלך, המומחיות שלי</p>
-        <a href="https://wa.me/972500000000" class="btn">לקביעת תור בוואטסאפ</a>
+    <div class="card">
+        <h1>ANNETTE LASHES</h1>
+        <p>המבט שלך, המומחיות שלנו</p>
+        <a href="https://wa.me/972500000000" class="btn">קבעו תור</a>
+        <a href="#" class="btn btn-outline">הכירו את השירותים</a>
     </div>
 </body>
 </html>
