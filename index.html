@@ -9,23 +9,15 @@
         :root {
             --primary-pink: #d4a5b2;
             --soft-white: #f8f8f8;
-            --dark-card: rgba(255, 255, 255, 0.08);
-            /* כאן תוכלי להחליף לקישור של התמונה שלך בהמשך */
-            --bg-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80');
+            --dark-card: rgba(0, 0, 0, 0.7);
+            --bg-image: url('https://i.ibb.co/qYJ3dpnQ/image.png');
         }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #0a0a0a;
-            color: var(--soft-white);
-            scroll-behavior: smooth;
-        }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: var(--soft-white); scroll-behavior: smooth; }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-image);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -40,37 +32,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 12px;
             color: var(--primary-pink);
-            font-size: 2.2rem;
+            font-size: 2rem;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
-        .lip-emoji { font-size: 1.6rem; }
+        .lip-emoji { font-size: 1.5rem; }
 
-        .hero h2 { font-size: 1.5rem; font-weight: 300; margin: 15px 0 5px; }
-        .hero p { font-size: 1rem; opacity: 0.8; margin-bottom: 30px; }
+        .hero h2 { font-size: 1.4rem; font-weight: 300; margin: 15px 0 5px; }
+        .hero p { font-size: 1rem; opacity: 0.9; margin-bottom: 30px; }
 
         .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
-        .btn { padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid var(--primary-pink); transition: 0.3s; }
+        .btn { padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid var(--primary-pink); transition: 0.3s; text-align: center; cursor: pointer; }
         .btn-fill { background: var(--primary-pink); color: #4a1a2c; }
         .btn-outline { color: var(--soft-white); background: transparent; }
 
-        /* Services */
         .section { padding: 60px 20px; max-width: 800px; margin: auto; }
-        .service-card {
-            background: var(--dark-card);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-        }
+        .service-card { background: var(--dark-card); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; backdrop-filter: blur(8px); }
         .service-card h3 { color: var(--primary-pink); margin: 15px 0; }
 
-        /* Floating Buttons */
-        .footer-icons { position: fixed; bottom: 25px; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; box-sizing: border-box; z-index: 1000; pointer-events: none; }
-        .icon-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; text-decoration: none; pointer-events: auto; }
+        /* טופס קביעת תור */
+        .booking-container { background: var(--dark-card); padding: 30px; border-radius: 25px; border: 1px solid var(--primary-pink); }
+        .booking-container input, .booking-container select {
+            width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: none; background: rgba(255,255,255,0.9); font-size: 1rem; box-sizing: border-box;
+        }
+        .submit-btn { width: 100%; background: var(--primary-pink); color: #4a1a2c; border: none; padding: 18px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
+
+        .floating-icons { position: fixed; bottom: 25px; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; box-sizing: border-box; z-index: 1000; pointer-events: none; }
+        .icon-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; text-decoration: none; pointer-events: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .wa-color { background: #25d366; }
         .ig-color { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
     </style>
@@ -79,52 +69,59 @@
 
     <section class="hero">
         <div class="name-wrapper">
-            KIM MELAMED <span class="lip-emoji">👄</span>
+            <span class="lip-emoji">👄</span>
+            KIM MELAMED
+            <span class="lip-emoji">👄</span>
         </div>
         <h2>המבט שלך, המומחיות שלנו</h2>
         <p>מתמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
         
         <div class="btn-group">
-            <a href="https://wa.me/972558854215" class="btn btn-fill">קבעו תור</a>
+            <a href="#booking" class="btn btn-fill">קבעו תור</a>
             <a href="#services" class="btn btn-outline">הכירו את השירותים</a>
         </div>
     </section>
 
     <section id="services" class="section">
-        <h2 style="text-align:center">השירותים שלנו</h2>
-        
+        <h2 style="text-align:center; margin-bottom: 30px;">השירותים שלנו</h2>
         <div class="service-card">
             <i class="fa-solid fa-eye" style="font-size: 30px; color: var(--primary-pink);"></i>
             <h3>הלחמת ריסים</h3>
-            <p>קלאסית, ווליום, מגה ווליום, וויספי ועוד. התאמה מדויקת לצורת העין ולסגנון שלך. מראה מלא ומרשים שמחזיק עד 4 שבועות.</p>
+            <p>קלאסית, ווליום, מגה ווליום ועוד.. התאמה מדויקת לצורת העין ולסגנון שלך.</p>
         </div>
-
         <div class="service-card">
             <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 30px; color: var(--primary-pink);"></i>
-            <h3>עיצוב וניקוי גבות</h3>
-            <p>עיצוב מדויק בשעווה ובפינצטה - מסגור מושלם לפנים בהתאמה אישית למבנה שלך.</p>
+            <h3>עיצוב גבות וניקוי</h3>
+            <p>עיצוב מדויק בשעווה ובפינצטה — מסגור מושלם לפנים.</p>
         </div>
-
         <div class="service-card">
             <i class="fa-solid fa-pen-nib" style="font-size: 30px; color: var(--primary-pink);"></i>
             <h3>איפור קבוע</h3>
-            <p>הדגשת שפתיים, גבות ואייליינר בטכניקות המתקדמות ביותר למראה מושלם וקבוע.</p>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-eraser" style="font-size: 30px; color: var(--primary-pink);"></i>
-            <h3>רימובר (הסרת איפור קבוע)</h3>
-            <p>הסרה או הבהרה של איפור קבוע ישן או לא מוצלח בצורה בטוחה ומקצועית.</p>
+            <p>שפתיים, גבות ואייליינר למראה מושלם שנשאר איתך כל היום.</p>
         </div>
     </section>
 
-    <div class="footer-icons">
-        <a href="https://wa.me/972558854215" class="icon-btn wa-color" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="https://www.instagram.com/kim.beauty.1?igsh=MWU1c2J5Zmdka242aA==" class="icon-btn ig-color" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+    <section id="booking" class="section">
+        <div class="booking-container">
+            <h2 style="text-align:center; margin-top:0;">קבעו תור</h2>
+            <p style="text-align:center; margin-bottom: 20px;">השאירו פרטים ואחזור אליכן</p>
+            <form action="https://wa.me/972558854215" method="get" target="_blank">
+                <input type="text" name="text" placeholder="שם מלא" required>
+                <input type="tel" placeholder="טלפון" required>
+                <select required>
+                    <option value="">בחרי שירות מבוקש</option>
+                    <option>הלחמת ריסים</option>
+                    <option>עיצוב גבות</option>
+                    <option>איפור קבוע</option>
+                </select>
+                <button type="submit" class="submit-btn">שלחי לי הודעה</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="floating-icons">
+        <a href="https://wa.me/972558854215" class="icon-btn wa-color" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/kim.beauty.1?igsh=MWU1c2J5Zmdka242aA==" class="icon-btn ig-color" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
 </body>
