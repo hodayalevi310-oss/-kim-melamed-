@@ -17,9 +17,9 @@
 
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-image);
             background-size: cover;
-            background-position: center;
+            background-position: center 20%; /* מזיז את התמונה למטה כדי שיראו את הפנים */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,15 +32,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             color: var(--primary-pink);
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
             text-transform: uppercase;
         }
-        .lip-emoji { font-size: 1.5rem; }
+        .lip-emoji { font-size: 1.8rem; }
 
-        .hero h2 { font-size: 1.4rem; font-weight: 300; margin: 15px 0 5px; }
+        .hero h2 { font-size: 1.5rem; font-weight: 300; margin: 15px 0 5px; }
         .hero p { font-size: 1rem; opacity: 0.9; margin-bottom: 30px; }
 
         .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
@@ -50,12 +50,12 @@
 
         .section { padding: 60px 20px; max-width: 800px; margin: auto; }
         .service-card { background: var(--dark-card); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; backdrop-filter: blur(8px); }
-        .service-card h3 { color: var(--primary-pink); margin: 15px 0; }
+        .service-card h3 { color: var(--primary-pink); margin: 15px 0; font-size: 1.4rem; }
+        .service-card p { line-height: 1.6; font-size: 0.95rem; }
 
-        /* טופס קביעת תור */
         .booking-container { background: var(--dark-card); padding: 30px; border-radius: 25px; border: 1px solid var(--primary-pink); }
         .booking-container input, .booking-container select {
-            width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: none; background: rgba(255,255,255,0.9); font-size: 1rem; box-sizing: border-box;
+            width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: none; background: rgba(255,255,255,0.95); font-size: 1rem; box-sizing: border-box;
         }
         .submit-btn { width: 100%; background: var(--primary-pink); color: #4a1a2c; border: none; padding: 18px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
 
@@ -83,28 +83,43 @@
     </section>
 
     <section id="services" class="section">
-        <h2 style="text-align:center; margin-bottom: 30px;">השירותים שלנו</h2>
+        <h2 style="text-align:center; margin-bottom: 40px;">השירותים שלנו</h2>
+        
         <div class="service-card">
-            <i class="fa-solid fa-eye" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <i class="fa-solid fa-eye" style="font-size: 35px; color: var(--primary-pink);"></i>
             <h3>הלחמת ריסים</h3>
-            <p>קלאסית, ווליום, מגה ווליום ועוד.. התאמה מדויקת לצורת העין ולסגנון שלך.</p>
+            <p>קלאסית, ווליום, מגה ווליום, וויספי ועוד.. התאמה מדויקת לצורת העין ולסגנון שלך. ריסים עם מראה מלא ומרשים, עם חומרים איכותיים שמחזיקים עד 4 שבועות.</p>
         </div>
+
         <div class="service-card">
-            <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 35px; color: var(--primary-pink);"></i>
             <h3>עיצוב גבות וניקוי</h3>
-            <p>עיצוב מדויק בשעווה ובפינצטה — מסגור מושלם לפנים.</p>
+            <p>עיצוב מדויק בשעווה ובפינצטה — מסגור מושלם לפנים. התאמה אישית למבנה הפנים, לצורת העין ולסגנון שמחמיא לך.</p>
         </div>
+
         <div class="service-card">
-            <i class="fa-solid fa-pen-nib" style="font-size: 30px; color: var(--primary-pink);"></i>
+            <i class="fa-solid fa-pen-nib" style="font-size: 35px; color: var(--primary-pink);"></i>
             <h3>איפור קבוע</h3>
-            <p>שפתיים, גבות ואייליינר למראה מושלם שנשאר איתך כל היום.</p>
+            <p>הדגשת תווי הפנים בצורה טבעית ועמידה: עיצוב שפתיים למראה מלא ורענן, הצללת גבות בשיטת הפודרה ואייליינר מדויק שנשאר מושלם בכל זמן.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-paint-brush" style="font-size: 35px; color: var(--primary-pink);"></i>
+            <h3>קעקועים בשיטת איפור קבוע</h3>
+            <p>קעקועים עדינים ואסתטיים בטכניקת איפור קבוע. פתרון מושלם לעיצובים קטנים ומינימליסטיים ברמת דיוק מקסימלית.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-eraser" style="font-size: 35px; color: var(--primary-pink);"></i>
+            <h3>רימובר (הוצאת איפור קבוע)</h3>
+            <p>טיפול מקצועי להסרה או הבהרה של איפור קבוע ישן או לא מוצלח, המאפשר לנקות את העור ולהכינו לעיצוב חדש ונקי.</p>
         </div>
     </section>
 
     <section id="booking" class="section">
         <div class="booking-container">
             <h2 style="text-align:center; margin-top:0;">קבעו תור</h2>
-            <p style="text-align:center; margin-bottom: 20px;">השאירו פרטים ואחזור אליכן</p>
+            <p style="text-align:center; margin-bottom: 20px;">השאירו פרטים ואחזור אליכן בהקדם</p>
             <form action="https://wa.me/972558854215" method="get" target="_blank">
                 <input type="text" name="text" placeholder="שם מלא" required>
                 <input type="tel" placeholder="טלפון" required>
@@ -113,8 +128,10 @@
                     <option>הלחמת ריסים</option>
                     <option>עיצוב גבות</option>
                     <option>איפור קבוע</option>
+                    <option>קעקועים עדינים</option>
+                    <option>רימובר</option>
                 </select>
-                <button type="submit" class="submit-btn">שלחי לי הודעה</button>
+                <button type="submit" class="submit-btn">שלחי לי הודעה לתיאום</button>
             </form>
         </div>
     </section>
