@@ -9,7 +9,7 @@
     <script>
         window.userwayConfig = {
             position: 5, /* ימין למטה */
-            color: '#e5c1cd', /* ורוד עדין מהעיצוב הקודם */
+            color: '#e5c1cd', /* ורוד עדין עדין */
             account: 'YkU6S2Vb9H'
         };
     </script>
@@ -17,15 +17,14 @@
     
     <style>
         :root {
-            --kim-nude-bg: #fdf5e6; /* צבע בש ניוד בהיר */
-            --kim-pink: #d4a5b2; /* ורוד עתיק עדין */
-            --kim-deep-pink: #c78d9e;
-            --kim-dark-text: #4a4a4a;
+            --kim-pink: #d4a5b2; /* הוורוד העתיק המרכזי */
             --kim-soft-white: #fbfbfb;
+            --kim-nude-bg: #fdf5e6; /* צבע בש ניוד בהיר */
+            --kim-dark-text: #4a4a4a;
             --kim-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        body { margin: 0; font-family: 'Segoe UI', 'Heebo', sans-serif; background: var(--kim-soft-white); color: var(--kim-dark-text); scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--kim-soft-white); color: var(--kim-dark-text); scroll-behavior: smooth; }
 
         /* לוגו צד ימין למעלה */
         .header { 
@@ -46,21 +45,20 @@
             color: white; text-align: center; padding: 20px;
         }
 
-        /* גופן Heebo עבה יותר לכותרות (בעברית) */
-        .hero h1 { font-family: 'Heebo', sans-serif; font-size: 3.8rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); font-weight: 700; letter-spacing: 1px; }
+        .hero h1 { font-size: 3.8rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); font-weight: bold; }
         .hero p { font-size: 1.3rem; margin: 15px 0 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.4); }
 
-        /* כפתורים חמים ומזמינים */
+        /* כפתורים חמים ומזמינים בצבע ורוד עדין */
         .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
         .btn { 
             padding: 18px; border-radius: 50px; text-decoration: none; 
             font-weight: bold; text-align: center; transition: 0.3s; font-size: 1.1rem;
         }
-        /* כפתור "השירותים שלנו" - הוחלף מ"תיאום תור" */
         .btn-services { background: var(--kim-pink); color: white; border: none; box-shadow: 0 4px 15px rgba(212,165,178,0.4); }
+        /* עדכון המלל לכפתור גלריית עבודות */
         .btn-gallery { border: 2px solid white; color: white; backdrop-filter: blur(5px); }
 
-        /* קוביית נתונים מעוצבת בצבעי בש וזהב עדין */
+        /* קוביית נתונים מעוצבת בצבעי בש - ללא זהב! */
         .stats-wrapper { padding: 40px 20px; display: flex; justify-content: center; background: white; }
         .stats-card { 
             background: var(--kim-nude-bg); padding: 25px; border-radius: 20px; 
@@ -68,26 +66,25 @@
             max-width: 400px; width: 100%; box-shadow: var(--kim-shadow);
             margin-top: -60px; z-index: 10;
         }
-        /* צבע זהב עדין למספרים */
-        .stat-item h4 { font-size: 1.6rem; color: #d4af37; margin: 0; }
+        /* שינוי צבע המספרים מזהב לורוד עתיק */
+        .stat-item h4 { font-size: 1.6rem; color: var(--kim-pink); margin: 0; }
         .stat-item p { font-size: 0.9rem; color: #888; margin: 5px 0 0; }
 
         /* רשימת שירותים - נקייה עם רקע בש */
         .services-area { padding: 60px 20px; max-width: 800px; margin: auto; }
-        /* כותרת עברית עבה */
-        .section-title { font-family: 'Heebo', sans-serif; font-size: 2.2rem; text-align: center; margin-bottom: 40px; color: var(--kim-dark-text); font-weight: 700; }
+        /* עדכון צבע כותרת "השירותים שלנו" שיתאים לכותרות השירותים */
+        .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 40px; color: var(--kim-pink); }
         
         .service-box { 
             background: white; border-radius: 20px; padding: 25px; 
             margin-bottom: 20px; text-align: right; border-right: 6px solid var(--kim-pink);
             box-shadow: var(--kim-shadow);
         }
-        .service-box h3 { margin: 0 0 10px; color: var(--kim-deep-pink); font-size: 1.5rem; font-weight: 700; }
+        .service-box h3 { margin: 0 0 10px; color: var(--kim-pink); font-size: 1.5rem; }
         .service-box p { margin: 0; font-size: 1rem; color: #666; line-height: 1.5; }
 
         /* יצירת קשר בסוף */
         .contact-section { padding: 80px 20px; text-align: center; background: white; }
-        .contact-title { font-family: 'Heebo', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
 
         /* אייקונים צפים משמאל למטה */
         .fixed-socials { position: fixed; bottom: 25px; left: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
@@ -157,7 +154,7 @@
     </section>
 
     <section class="contact-section">
-        <h2 class="contact-title">רוצה לקבוע תור?</h2>
+        <h2>רוצה לקבוע תור?</h2>
         <p>זמינה עבורך לכל שאלה בוואטסאפ</p>
         <br>
         <a href="https://wa.me/972558854215" class="btn btn-services" style="display:inline-block; width: 200px;">דברי איתי</a>
