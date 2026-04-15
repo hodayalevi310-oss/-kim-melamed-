@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --gold-pink: #d4a5b2;
-            --dark-card: rgba(255, 255, 255, 0.08);
+            --primary-pink: #d4a5b2;
             --soft-white: #f8f8f8;
+            --dark-card: rgba(255, 255, 255, 0.08);
+            
+            /* --- החליפי את הקישור הזה בקישור לתמונה שלך --- */
+            --bg-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80');
         }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: #0a0a0a;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
             color: var(--soft-white);
-            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-image);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -36,161 +38,53 @@
             padding: 20px;
         }
 
-        .hero h1 { font-size: 2.8rem; margin: 0; color: var(--gold-pink); }
-        .hero h2 { font-size: 1.5rem; font-weight: 300; margin: 10px 0; }
-        .hero p { font-size: 1rem; opacity: 0.8; max-width: 300px; }
-
-        .btn-group { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; width: 100%; max-width: 300px; }
-        
-        .btn {
-            padding: 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            border: 1px solid var(--gold-pink);
-        }
-        .btn-fill { background: var(--gold-pink); color: #000; }
-        .btn-outline { color: var(--gold-pink); background: transparent; }
-
-        /* Services Grid */
-        .section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-        .section h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .service-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .service-card h3 { color: var(--gold-pink); margin-top: 15px; font-size: 1.4rem; }
-        .service-card p { font-size: 0.95rem; opacity: 0.9; }
-
-        /* Form */
-        .booking-form {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 25px;
-            margin-top: 40px;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            border: none;
-            box-sizing: border-box;
-        }
-        button { background: var(--gold-pink); font-weight: bold; cursor: pointer; }
-
-        /* Floating Icons */
-        .footer-icons {
-            position: fixed;
-            bottom: 25px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 30px;
-            pointer-events: none;
-        }
-        .icon-btn {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
+        /* עיצוב משופר לשם עם האמוג'י */
+        .name-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            pointer-events: auto;
+            gap: 5px; /* מרווח קטן בין השם לנשיקה */
+            color: var(--primary-pink);
+            font-size: 2.2rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
         }
+        .lip-emoji { font-size: 1.6rem; vertical-align: middle; } /* הקטנת האמוג'י */
+
+        .hero h2 { font-size: 1.2rem; font-weight: 300; margin: 15px 0 5px; }
+        .hero p { font-size: 0.9rem; margin: 0 0 30px; opacity: 0.8; max-width: 300px; }
+
+        .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
+        .btn { padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        .btn-fill { background: var(--primary-pink); color: #4a1a2c; }
+        .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: var(--soft-white); }
+
+        /* כפתורים צפים */
+        .floating-icons { position: fixed; bottom: 25px; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; box-sizing: border-box; z-index: 1000; pointer-events: none; }
+        .icon-btn { width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); pointer-events: auto; }
         .wa-color { background: #25d366; }
         .ig-color { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>👄 KIM MELAMED 👄</h1>
+        <div class="name-wrapper">
+            KIM MELAMED
+            <span class="lip-emoji">👄</span>
+        </div>
         <h2>המבט שלך, המומחיות שלנו</h2>
-        <p>מתמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
+        <p>متמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
         
         <div class="btn-group">
-            <a href="#booking" class="btn btn-fill">קבעו תור</a>
-            <a href="#services" class="btn btn-outline">הכירו את השירותים</a>
+            <a href="https://wa.me/972558854215" class="btn btn-fill" target="_blank">קבעו תור</a>
+            <a href="#" class="btn btn-outline">הכירו את השירותים</a>
         </div>
     </section>
 
-    <section id="services" class="section">
-        <h2>השירותים שלנו</h2>
-        <div class="services-grid">
-            
-            <div class="service-card">
-                <i class="fa-solid fa-eye" style="font-size: 35px; color: var(--gold-pink);"></i>
-                <h3>הלחמת ריסים</h3>
-                <p>קלאסית, ווליום, מגה ווליום, וויספי ועוד. התאמה מדויקת לצורת העין ולסגנון שלך. ריסים עם מראה מלא ומרשים, המבוצעים עם חומרים איכותיים שמחזיקים עד 4 שבועות.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 35px; color: var(--gold-pink);"></i>
-                <h3>עיצוב וניקוי גבות</h3>
-                <p>עיצוב מדויק בשעווה ובפינצטה — מסגור מושלם לפנים. התאמה אישית למבנה הפנים, לצורת העין ולסגנון שמחמיא לך ביותר.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fa-solid fa-pen-nib" style="font-size: 35px; color: var(--gold-pink);"></i>
-                <h3>איפור קבוע</h3>
-                <p>הדגשת תווי הפנים בצורה טבעית ועמידה: הצללת גבות בשיטת הפודרה, הדגשת שפתיים למראה מלא ורענן, ואייליינר מדויק שנשאר מושלם בכל מצב.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fa-solid fa-paint-brush" style="font-size: 35px; color: var(--gold-pink);"></i>
-                <h3>קעקועים בשיטת איפור קבוע</h3>
-                <p>קעקועים עדינים ואסתטיים בטכניקת איפור קבוע. פתרון מושלם למי שמחפשת עיצוב קטן, דק ומינימליסטי עם רמת דיוק מקסימלית.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fa-solid fa-eraser" style="font-size: 35px; color: var(--gold-pink);"></i>
-                <h3>רימובר (הוצאת איפור קבוע)</h3>
-                <p>טיפול מקצועי להסרה או הבהרה של איפור קבוע ישן או לא מוצלח. שימוש בחומרים בטוחים המאפשרים לנקות את העור ולהכין אותו לעיצוב חדש ונקי.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="booking" class="section">
-        <div class="booking-form">
-            <h2 style="margin-top:0">דברי איתי</h2>
-            <form action="https://wa.me/972558854215" method="get">
-                <input type="text" placeholder="שם מלא" required>
-                <input type="tel" placeholder="מספר טלפון" required>
-                <select required>
-                    <option value="">בחרי שירות מבוקש...</option>
-                    <option>הלחמת ריסים</option>
-                    <option>עיצוב גבות</option>
-                    <option>איפור קבוע</option>
-                    <option>קעקועים</option>
-                    <option>רימובר</option>
-                </select>
-                <button type="submit">שלחי לי הודעה לוואטסאפ</button>
-            </form>
-        </div>
-    </section>
-
-    <div class="footer-icons">
+    <div class="floating-icons">
         <a href="https://wa.me/972558854215" class="icon-btn wa-color" target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
