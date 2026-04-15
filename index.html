@@ -9,7 +9,7 @@
     <script>
         window.userwayConfig = {
             position: 5, 
-            color: '#d4a5b2', 
+            color: '#e5c1cd', 
             account: 'YkU6S2Vb9H'
         };
     </script>
@@ -17,111 +17,146 @@
     
     <style>
         :root {
+            --bg-nude: #fdf5e6;
             --kim-pink: #d4a5b2;
-            --kim-gold: #d4af37;
-            --text: #4a4a4a;
+            --soft-pink: #e5c1cd;
+            --dark-text: #4a4a4a;
+            --light-gray: #f8f8f8;
         }
 
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #fff; color: var(--dark-text); scroll-behavior: smooth; }
 
-        /* לוגו צד שמאל למעלה */
+        /* לוגו צד ימין למעלה */
         .header { 
-            position: fixed; top: 0; left: 0; width: 100%; 
-            padding: 15px; background: rgba(255,255,255,0.9); 
+            position: fixed; top: 0; right: 0; width: 100%; 
+            padding: 10px 20px; background: rgba(255,255,255,0.98); 
             z-index: 1000; display: flex; justify-content: flex-start;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-        .header img { height: 50px; }
+        .header img { height: 50px; width: auto; }
 
-        /* תמונת רקע חדה */
+        /* רקע גיבור - תמונה איכותית */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), 
                         url('https://i.ibb.co/ycRzVsKK/image.png') no-repeat center center;
             background-size: cover;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            color: white; text-align: center; padding-top: 60px;
+            color: white; text-align: center; padding: 20px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .hero h1 { font-size: 3.2rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); font-weight: 300; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; margin: 15px 0 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.4); }
 
-        /* כפתורים ברורים */
-        .btn-box { display: flex; flex-direction: column; gap: 15px; width: 280px; }
+        /* כפתורים מעוצבים */
+        .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 280px; }
         .btn { 
-            padding: 15px; border-radius: 50px; text-decoration: none; 
-            font-weight: bold; text-align: center; transition: 0.3s;
+            padding: 16px; border-radius: 50px; text-decoration: none; 
+            font-weight: bold; text-align: center; transition: 0.3s; font-size: 1rem;
         }
-        .btn-wa { background: var(--kim-pink); color: white; border: none; }
-        .btn-info { border: 2px solid white; color: white; }
+        .btn-main { background: var(--kim-pink); color: white; border: none; }
+        .btn-sec { border: 1.5px solid white; color: white; backdrop-filter: blur(3px); }
 
-        /* השירותים שלך - פשוט ונקי */
-        .services-section { padding: 50px 20px; text-align: center; background: #fff; }
-        .service-item { 
-            background: #fdf5e6; margin-bottom: 15px; padding: 20px; 
-            border-radius: 15px; border-right: 5px solid var(--kim-gold);
-            text-align: right;
+        /* כרטיסיית נתונים */
+        .stats-wrapper { padding: 40px 20px; display: flex; justify-content: center; background: white; }
+        .stats-card { 
+            background: white; padding: 25px; border-radius: 15px; 
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; 
+            max-width: 380px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            margin-top: -70px; z-index: 10;
         }
-        .service-item h3 { margin: 0 0 5px 0; color: var(--kim-gold); }
-        .service-item p { margin: 0; font-size: 0.95rem; }
+        .stat-item h4 { font-size: 1.5rem; color: var(--kim-pink); margin: 0; }
+        .stat-item p { font-size: 0.85rem; color: #999; margin: 3px 0 0; }
 
-        /* וואטסאפ ואינסטגרם למטה משמאל */
-        .social-fixed { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
-        .social-icon { 
+        /* רשימת שירותים */
+        .services-area { padding: 60px 20px; max-width: 700px; margin: auto; }
+        .service-card { 
+            background: var(--light-gray); border-radius: 15px; padding: 20px; 
+            margin-bottom: 15px; text-align: right; border-right: 4px solid var(--soft-pink);
+        }
+        .service-card h3 { margin: 0 0 8px; color: var(--dark-text); font-size: 1.25rem; }
+        .service-card p { margin: 0; font-size: 0.95rem; color: #777; line-height: 1.5; }
+
+        /* אזור יצירת קשר */
+        .contact-area { padding: 80px 20px; text-align: center; background: var(--bg-nude); }
+
+        /* אייקונים צפים משמאל למטה */
+        .floating-socials { position: fixed; bottom: 25px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .icon-link { 
             width: 50px; height: 50px; border-radius: 50%; color: white; 
-            display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; font-size: 24px; 
+            text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .wa-bg { background: #25d366; }
-        .ig-bg { background: #e1306c; }
+        .wa { background: #25d366; }
+        .ig { background: #e1306c; }
+
+        /* תיקון מיקום נגישות לצד ימין */
+        .uway-accessibility-fixed { right: 20px !important; left: auto !important; bottom: 25px !important; }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <img src="https://i.ibb.co/KcccjSK9/image.png" alt="Logo">
+        <img src="https://i.ibb.co/KcccjSK9/image.png" alt="Kim Melamed Logo">
     </header>
 
     <section class="hero">
         <h1>KIM MELAMED</h1>
         <p>מתמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
-        
-        <div class="btn-box">
-            <a href="https://wa.me/972558854215" class="btn btn-wa">קבעו תור בוואטסאפ</a>
-            <a href="#my-services" class="btn btn-info">הכירו את השירותים</a>
+        <div class="btn-group">
+            <a href="#booking" class="btn btn-main">קבעו תור</a>
+            <a href="#services" class="btn btn-sec">הכירו את השירותים</a>
         </div>
     </section>
 
-    <section id="my-services" class="services-section">
-        <h2 style="margin-bottom: 30px;">השירותים שלנו</h2>
+    <div class="stats-wrapper">
+        <div class="stats-card">
+            <div class="stat-item"><h4>+150</h4><p>לקוחות מרוצות</p></div>
+            <div class="stat-item"><h4>+5</h4><p>שנות ניסיון</p></div>
+            <div class="stat-item"><h4>חולון</h4><p>מיקום העסק</p></div>
+            <div class="stat-item"><h4>Premium</h4><p>חומרים איכותיים</p></div>
+        </div>
+    </div>
+
+    <section id="services" class="services-area">
+        <h2 style="text-align: center; margin-bottom: 35px; font-weight: 400;">השירותים שלנו</h2>
         
-        <div class="service-item">
+        <div class="service-card">
             <h3>הלחמת ריסים</h3>
-            <p>קלאסית, ווליום, מגה ווליום. התאמה אישית למבנה העין.</p>
+            <p>קלאסית, ווליום, מגה ווליום. התאמה מדויקת לצורת העין שלך למראה מושלם.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-card">
             <h3>עיצוב גבות</h3>
-            <p>ניקוי ועיצוב מדויק בשעווה ופינצטה.</p>
+            <p>עיצוב מדויק בשעווה ופינצטה למסגור הפנים והדגשת המבט.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-card">
             <h3>איפור קבוע</h3>
-            <p>שפתיים, גבות ואייליינר למראה מושלם תמיד.</p>
+            <p>שפתיים, גבות ואייליינר למראה רענן ומושקע 24/7 בטכניקות הכי מתקדמות.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-card">
             <h3>קעקועים בשיטת איפור קבוע</h3>
-            <p>עיצובים אסתטיים ועדינים בטכניקה מתקדמת.</p>
+            <p>עיצובים אסתטיים, עדינים ומינימליסטיים המבוצעים בדיוק רב.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-card">
             <h3>רימובר</h3>
-            <p>הסרה או הבהרה בטוחה של איפור קבוע ישן.</p>
+            <p>טיפול מקצועי ובטוח להסרה או הבהרה של איפור קבוע ישן.</p>
         </div>
     </section>
 
-    <div class="social-fixed">
-        <a href="https://www.instagram.com/kim.beauty.1" class="social-icon ig-bg" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/972558854215" class="social-icon wa-bg" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <section id="booking" class="contact-area">
+        <h2 style="font-weight: 400;">בואי נתאם תור</h2>
+        <p>זמינה עבורך לכל שאלה בוואטסאפ</p>
+        <br>
+        <a href="https://wa.me/972558854215" class="btn btn-main" style="display:inline-block; width: 220px;">דברי איתי</a>
+    </section>
+
+    <div class="floating-socials">
+        <a href="https://www.instagram.com/kim.beauty.1" class="icon-link ig" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/972558854215" class="icon-link wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
 </body>
