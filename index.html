@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIM MELAMED | Aesthetic Studio</title>
+    <title>KIM MELAMED - יופי וטיפוח</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <script>
         window.userwayConfig = {
             position: 5, /* ימין למטה */
-            color: '#000000',
+            color: '#e5c1cd', /* ורוד עדין מהעיצוב הקודם */
             account: 'YkU6S2Vb9H'
         };
     </script>
@@ -17,125 +17,155 @@
     
     <style>
         :root {
-            --white: #ffffff;
-            --light-gray: #f9f9f9;
-            --black: #000000;
-            --text-gray: #555555;
+            --kim-nude-bg: #fdf5e6; /* צבע בש ניוד בהיר */
+            --kim-pink: #d4a5b2; /* ורוד עתיק עדין */
+            --kim-deep-pink: #c78d9e;
+            --kim-dark-text: #4a4a4a;
+            --kim-soft-white: #fbfbfb;
+            --kim-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        body { margin: 0; font-family: 'Helvetica Neue', sans-serif; background: var(--white); color: var(--black); scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Segoe UI', 'Heebo', sans-serif; background: var(--kim-soft-white); color: var(--kim-dark-text); scroll-behavior: smooth; }
 
         /* לוגו צד ימין למעלה */
         .header { 
             position: fixed; top: 0; right: 0; width: 100%; 
-            padding: 15px 25px; background: rgba(255,255,255,0.98); 
+            padding: 10px 20px; background: rgba(255,255,255,0.98); 
             z-index: 1000; display: flex; justify-content: flex-start;
-            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-        .header img { height: 45px; }
+        .header img { height: 50px; width: auto; }
 
-        /* הירו עם תמונה חדה */
+        /* גיבור - תמונה חדה, טקסט עבה ועברית */
         .hero {
             height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), 
                         url('https://i.ibb.co/ycRzVsKK/image.png') no-repeat center center;
             background-size: cover;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; padding: 20px;
+            color: white; text-align: center; padding: 20px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin: 0; font-weight: 200; letter-spacing: 4px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.1rem; margin: 20px 0; color: #fff; }
+        /* גופן Heebo עבה יותר לכותרות (בעברית) */
+        .hero h1 { font-family: 'Heebo', sans-serif; font-size: 3.8rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); font-weight: 700; letter-spacing: 1px; }
+        .hero p { font-size: 1.3rem; margin: 15px 0 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.4); }
 
-        /* כפתורים */
-        .btn-group { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 260px; }
+        /* כפתורים חמים ומזמינים */
+        .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
         .btn { 
-            padding: 15px; text-decoration: none; font-weight: bold; text-align: center; 
-            transition: 0.3s; font-size: 0.9rem; letter-spacing: 1px;
+            padding: 18px; border-radius: 50px; text-decoration: none; 
+            font-weight: bold; text-align: center; transition: 0.3s; font-size: 1.1rem;
         }
-        .btn-black { background: var(--black); color: white; border: 1px solid var(--black); }
-        .btn-outline { border: 1px solid white; color: white; backdrop-filter: blur(5px); }
+        /* כפתור "השירותים שלנו" - הוחלף מ"תיאום תור" */
+        .btn-services { background: var(--kim-pink); color: white; border: none; box-shadow: 0 4px 15px rgba(212,165,178,0.4); }
+        .btn-gallery { border: 2px solid white; color: white; backdrop-filter: blur(5px); }
 
-        /* גלריה */
-        .gallery { padding: 80px 20px; text-align: center; }
-        .gallery-grid { 
-            display: grid; grid-template-columns: repeat(2, 1fr); 
-            gap: 10px; max-width: 800px; margin: 30px auto; 
+        /* קוביית נתונים מעוצבת בצבעי בש וזהב עדין */
+        .stats-wrapper { padding: 40px 20px; display: flex; justify-content: center; background: white; }
+        .stats-card { 
+            background: var(--kim-nude-bg); padding: 25px; border-radius: 20px; 
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; 
+            max-width: 400px; width: 100%; box-shadow: var(--kim-shadow);
+            margin-top: -60px; z-index: 10;
         }
-        .gallery-item { aspect-ratio: 1/1; overflow: hidden; background: #eee; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        /* צבע זהב עדין למספרים */
+        .stat-item h4 { font-size: 1.6rem; color: #d4af37; margin: 0; }
+        .stat-item p { font-size: 0.9rem; color: #888; margin: 5px 0 0; }
 
-        /* שירותים */
-        .services { padding: 60px 20px; background: var(--light-gray); }
-        .service-card { 
-            background: white; padding: 25px; margin-bottom: 15px; 
-            text-align: right; border-right: 2px solid var(--black);
-            max-width: 600px; margin-left: auto; margin-right: auto;
+        /* רשימת שירותים - נקייה עם רקע בש */
+        .services-area { padding: 60px 20px; max-width: 800px; margin: auto; }
+        /* כותרת עברית עבה */
+        .section-title { font-family: 'Heebo', sans-serif; font-size: 2.2rem; text-align: center; margin-bottom: 40px; color: var(--kim-dark-text); font-weight: 700; }
+        
+        .service-box { 
+            background: white; border-radius: 20px; padding: 25px; 
+            margin-bottom: 20px; text-align: right; border-right: 6px solid var(--kim-pink);
+            box-shadow: var(--kim-shadow);
         }
-        .service-card h3 { margin: 0 0 10px; font-weight: 400; font-size: 1.3rem; }
-        .service-card p { margin: 0; font-size: 0.9rem; color: var(--text-gray); }
+        .service-box h3 { margin: 0 0 10px; color: var(--kim-deep-pink); font-size: 1.5rem; font-weight: 700; }
+        .service-box p { margin: 0; font-size: 1rem; color: #666; line-height: 1.5; }
 
-        /* אינסטגרם ווואטסאפ צד שמאל למטה */
-        .social-fixed { position: fixed; bottom: 30px; left: 30px; display: flex; flex-direction: column; gap: 20px; z-index: 999; }
-        .social-fixed a { color: var(--black); font-size: 26px; transition: 0.3s; }
+        /* יצירת קשר בסוף */
+        .contact-section { padding: 80px 20px; text-align: center; background: white; }
+        .contact-title { font-family: 'Heebo', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
 
-        /* וידוא שנגישות נשארת למטה */
-        #userwayAccessibilityWidget { bottom: 30px !important; right: 30px !important; top: auto !important; }
+        /* אייקונים צפים משמאל למטה */
+        .fixed-socials { position: fixed; bottom: 25px; left: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+        .s-icon { 
+            width: 55px; height: 55px; border-radius: 50%; color: white; 
+            display: flex; align-items: center; justify-content: center; font-size: 28px; 
+            text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .wa-bg { background: #25d366; }
+        .ig-bg { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+        /* וידוא מיקום נגישות */
+        .uway-accessibility-fixed { right: 20px !important; left: auto !important; bottom: 25px !important; }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <img src="https://i.ibb.co/KcccjSK9/image.png" alt="KIM MELAMED">
+        <img src="https://i.ibb.co/KcccjSK9/image.png" alt="Kim Melamed Logo">
     </header>
 
     <section class="hero">
         <h1>KIM MELAMED</h1>
-        <p>AESTHETIC & PRECISION | חולון ☕️</p>
+        <p>מתמחה במראה טבעי שחוסך לך זמן בבוקר ☕️</p>
         <div class="btn-group">
-            <a href="https://wa.me/972558854215" class="btn btn-black">תיאום תור</a>
-            <a href="#gallery" class="btn btn-outline">גלריית עבודות</a>
+            <a href="#services-area" class="btn btn-services">השירותים שלנו</a>
+            <a href="https://www.instagram.com/kim.beauty.1" class="btn btn-gallery" target="_blank">גלריית עבודות</a>
         </div>
     </section>
 
-    <section id="gallery" class="gallery">
-        <h2 style="font-weight: 200; letter-spacing: 2px;">PORTFOLIO</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://i.ibb.co/ycRzVsKK/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/ycRzVsKK/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/ycRzVsKK/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/ycRzVsKK/image.png"></div>
+    <div class="stats-wrapper">
+        <div class="stats-card">
+            <div class="stat-item"><h4>+150</h4><p>לקוחות מרוצות</p></div>
+            <div class="stat-item"><h4>+5</h4><p>שנות ניסיון</p></div>
+            <div class="stat-item"><h4>חולון</h4><p>מיקום העסק</p></div>
+            <div class="stat-item"><h4>Premium</h4><p>חומרים איכותיים</p></div>
         </div>
-    </section>
+    </div>
 
-    <section id="services" class="services">
-        <h2 style="text-align: center; font-weight: 200; margin-bottom: 40px;">SERVICES</h2>
+    <section id="services-area" class="services-area">
+        <h2 class="section-title">השירותים שלנו</h2>
         
-        <div class="service-card">
+        <div class="service-box">
             <h3>הלחמת ריסים</h3>
-            <p>קלאסית, ווליום, מגה ווליום. התאמה מדויקת לצורת העין שלך.</p>
+            <p>קלאסית, ווליום, מגה ווליום. התאמה מדויקת לצורת העין שלך למראה מושלם.</p>
         </div>
-        <div class="service-card">
+
+        <div class="service-box">
             <h3>עיצוב גבות</h3>
-            <p>עיצוב מדויק בשעווה ופינצטה למסגור מושלם לפנים.</p>
+            <p>עיצוב מדויק בשעווה ופינצטה למסגור הפנים והדגשת המבט.</p>
         </div>
-        <div class="service-card">
+
+        <div class="service-box">
             <h3>איפור קבוע</h3>
-            <p>שפתיים, גבות ואייליינר בטכניקות המתקדמות ביותר.</p>
+            <p>שפתיים, גבות ואייליינר למראה רענן ומושקע 24/7 בטכניקות הכי מתקדמות.</p>
         </div>
-        <div class="service-card">
+
+        <div class="service-box">
             <h3>קעקועים בשיטת איפור קבוע</h3>
-            <p>עיצובים אסתטיים ועדינים בטכניקה מתקדמת.</p>
+            <p>עיצובים אסתטיים, עדינים ומינימליסטיים המבוצעים בדיוק רב.</p>
         </div>
-        <div class="service-card">
+
+        <div class="service-box">
             <h3>רימובר</h3>
-            <p>הסרה או הבהרה בטוחה של איפור קבוע ישן.</p>
+            <p>טיפול מקצועי ובטוח להסרה או הבהרה של איפור קבוע ישן שתרצי לשנות.</p>
         </div>
     </section>
 
-    <div class="social-fixed">
-        <a href="https://www.instagram.com/kim.beauty.1" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/972558854215" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <section class="contact-section">
+        <h2 class="contact-title">רוצה לקבוע תור?</h2>
+        <p>זמינה עבורך לכל שאלה בוואטסאפ</p>
+        <br>
+        <a href="https://wa.me/972558854215" class="btn btn-services" style="display:inline-block; width: 200px;">דברי איתי</a>
+    </section>
+
+    <div class="fixed-socials">
+        <a href="https://www.instagram.com/kim.beauty.1" class="s-icon ig-bg" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/972558854215" class="s-icon wa-bg" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
 </body>
