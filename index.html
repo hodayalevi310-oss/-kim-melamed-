@@ -8,8 +8,8 @@
     
     <script>
         window.userwayConfig = {
-            position: 5, 
-            color: '#d4a5b2', 
+            position: 5, /* ימין למטה */
+            color: '#d4a5b2',
             account: 'YkU6S2Vb9H'
         };
     </script>
@@ -67,13 +67,13 @@
         .stat-item h4 { font-size: 1.6rem; color: var(--kim-pink); margin: 0; font-weight: bold; }
         .stat-item p { font-size: 0.9rem; color: #888; margin: 5px 0 0; }
 
-        /* גלריית עבודות מורחבת */
+        /* גלריית עבודות מורחבת (16 תמונות) */
         .gallery-area { padding: 60px 20px; background: white; text-align: center; }
         .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 40px; color: var(--kim-pink); font-weight: bold; }
         
         .gallery-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 12px; max-width: 1000px; margin: 0 auto; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+            gap: 12px; max-width: 1100px; margin: 0 auto; 
         }
         .gallery-item { 
             aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; 
@@ -95,7 +95,7 @@
         /* צור קשר */
         .contact-section { padding: 80px 20px; text-align: center; background: var(--kim-soft-white); }
 
-        /* אייקונים צפים (שמאל למטה) */
+        /* אייקונים צפים */
         .fixed-socials { position: fixed; bottom: 25px; left: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
         .s-icon { 
             width: 55px; height: 55px; border-radius: 50%; color: white; 
@@ -105,18 +105,14 @@
         .wa-bg { background: #25d366; }
         .ig-bg { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 
-        /* פקודת דריסה סופית לנגישות - מקבע למטה ימין ומשנה צבע */
-        #userwayAccessibilityWidget, 
-        .uway, 
-        #uway-accessibility-widget { 
+        /* דריסה סופית לנגישות שלא תקפוץ למעלה ולא תהיה כחולה */
+        div#userwayAccessibilityWidget { 
             top: auto !important; 
             bottom: 25px !important; 
             right: 20px !important; 
             left: auto !important;
         }
-        
-        /* הסרת הכחול של כפתור הנגישות במידה והוא מופיע */
-        .uway-button-color { background-color: var(--kim-pink) !important; }
+        .uway-accessibility-fixed { background-color: var(--kim-pink) !important; }
     </style>
 </head>
 <body>
@@ -146,18 +142,22 @@
     <section id="gallery" class="gallery-area">
         <h2 class="section-title">גלריית עבודות</h2>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://i.ibb.co/ycQ29j3S/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/ZzxkWK95/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/d4QX6xyf/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/sd7HF7Tz/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/6czYRmpt/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/gMXGKXwp/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/9mrTDGYk/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/MDt8r5KK/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/FL5tMBmF/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/xSFbcVzX/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/hx4K65Yk/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/ycQ29j3S/image.png"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/ZzxkWK95/image.png" alt="שפתיים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/ycQ29j3S/image.png" alt="ריסים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/d4QX6xyf/image.png" alt="גבות"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/sd7HF7Tz/image.png" alt="ריסים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/6czYRmpt/image.png" alt="קעקוע עדין"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/gMXGKXwp/image.png" alt="ריסים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/9mrTDGYk/image.png" alt="גבות"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/MDt8r5KK/image.png" alt="שפתיים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/FL5tMBmF/image.png" alt="ריסים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/xSFbcVzX/image.png" alt="שפתיים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/hx4K65Yk/image.png" alt="גבות"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/ycQ29j3S/image.png" alt="עבודה"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/ZzxkWK95/image.png" alt="שפתיים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/d4QX6xyf/image.png" alt="גבות"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/9mrTDGYk/image.png" alt="ריסים"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/MDt8r5KK/image.png" alt="עבודה"></div>
         </div>
     </section>
 
