@@ -8,8 +8,8 @@
     
     <script>
         window.userwayConfig = {
-            position: 5, /* ימין למטה */
-            color: '#d4a5b2',
+            position: 5, 
+            color: '#d4a5b2', 
             account: 'YkU6S2Vb9H'
         };
     </script>
@@ -95,7 +95,7 @@
         /* צור קשר */
         .contact-section { padding: 80px 20px; text-align: center; background: var(--kim-soft-white); }
 
-        /* אייקונים צפים */
+        /* אייקונים צפים (שמאל למטה) */
         .fixed-socials { position: fixed; bottom: 25px; left: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
         .s-icon { 
             width: 55px; height: 55px; border-radius: 50%; color: white; 
@@ -105,12 +105,18 @@
         .wa-bg { background: #25d366; }
         .ig-bg { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 
-        /* תיקון קריטי לנגישות שלא תקפוץ למעלה */
-        #userwayAccessibilityWidget { 
+        /* פקודת דריסה סופית לנגישות - מקבע למטה ימין ומשנה צבע */
+        #userwayAccessibilityWidget, 
+        .uway, 
+        #uway-accessibility-widget { 
             top: auto !important; 
             bottom: 25px !important; 
             right: 20px !important; 
+            left: auto !important;
         }
+        
+        /* הסרת הכחול של כפתור הנגישות במידה והוא מופיע */
+        .uway-button-color { background-color: var(--kim-pink) !important; }
     </style>
 </head>
 <body>
@@ -149,9 +155,9 @@
             <div class="gallery-item"><img src="https://i.ibb.co/9mrTDGYk/image.png"></div>
             <div class="gallery-item"><img src="https://i.ibb.co/MDt8r5KK/image.png"></div>
             <div class="gallery-item"><img src="https://i.ibb.co/FL5tMBmF/image.png"></div>
-            <div class="gallery-item"><img src="https://i.ibb.co/sd7HF7Tz/image.png"></div>
             <div class="gallery-item"><img src="https://i.ibb.co/xSFbcVzX/image.png"></div>
             <div class="gallery-item"><img src="https://i.ibb.co/hx4K65Yk/image.png"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/ycQ29j3S/image.png"></div>
         </div>
     </section>
 
